@@ -1215,14 +1215,14 @@ func (config DeleteWebhookConfig) params() (Params, error) {
 
 // InlineConfig contains information on making an InlineQuery response.
 type InlineConfig struct {
-	InlineQueryID     string                   `json:"inline_query_id"`
-	Results           []interface{}            `json:"results"`
-	CacheTime         int                      `json:"cache_time"`
-	IsPersonal        bool                     `json:"is_personal"`
-	NextOffset        string                   `json:"next_offset"`
-	SwitchPMText      string                   `json:"switch_pm_text"`
-	SwitchPMParameter string                   `json:"switch_pm_parameter"`
-	Button            InlineQueryResultsButton `json:"button"`
+	InlineQueryID string        `json:"inline_query_id"`
+	Results       []interface{} `json:"results"`
+	CacheTime     int           `json:"cache_time"`
+	IsPersonal    bool          `json:"is_personal"`
+	NextOffset    string        `json:"next_offset"`
+	//SwitchPMText      string                   `json:"switch_pm_text"`
+	//SwitchPMParameter string                   `json:"switch_pm_parameter"`
+	Button InlineQueryResultsButton `json:"button"`
 }
 
 type InlineQueryResultsButton struct {
@@ -1242,8 +1242,8 @@ func (config InlineConfig) params() (Params, error) {
 	params.AddNonZero("cache_time", config.CacheTime)
 	params.AddBool("is_personal", config.IsPersonal)
 	params.AddNonEmpty("next_offset", config.NextOffset)
-	params.AddNonEmpty("switch_pm_text", config.SwitchPMText)
-	params.AddNonEmpty("switch_pm_parameter", config.SwitchPMParameter)
+	//params.AddNonEmpty("switch_pm_text", config.SwitchPMText)
+	//params.AddNonEmpty("switch_pm_parameter", config.SwitchPMParameter)
 	err := params.AddInterface("button", config.Button)
 	err = params.AddInterface("results", config.Results)
 
