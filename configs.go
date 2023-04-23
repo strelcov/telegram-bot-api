@@ -1227,8 +1227,8 @@ type InlineConfig struct {
 
 type InlineQueryResultsButton struct {
 	Text           string     `json:"text"`
-	StartParameter string     `json:"start_parameter"`
-	WebApp         WebAppInfo `json:"web_app"`
+	StartParameter string     `json:"start_parameter,omitempty"`
+	WebApp         WebAppInfo `json:"web_app,omitempty"`
 }
 
 func (config InlineConfig) method() string {
