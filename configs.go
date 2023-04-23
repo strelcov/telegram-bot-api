@@ -1244,8 +1244,8 @@ func (config InlineConfig) params() (Params, error) {
 	params.AddNonEmpty("next_offset", config.NextOffset)
 	//params.AddNonEmpty("switch_pm_text", config.SwitchPMText)
 	//params.AddNonEmpty("switch_pm_parameter", config.SwitchPMParameter)
-	//err := params.AddInterface("button", config.Button)
-	err := params.AddInterface("results", config.Results)
+	err := params.AddInterface("button", config.Button)
+	err = params.AddInterface("results", config.Results)
 
 	return params, err
 }

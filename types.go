@@ -620,6 +620,10 @@ type Message struct {
 	//
 	// optional
 	WebAppData *WebAppData `json:"web_app_data"`
+	// WriteAccessAllowed is a service message: about a user allowing a bot to write messages after adding the bot to the attachment menu or launching a Web App from a link.
+	//
+	// optional
+	WriteAccessAllowed *WriteAccessAllowed `json:"write_access_allowed"`
 	// ReplyMarkup is the Inline keyboard attached to the message.
 	// login_url buttons are represented as ordinary url buttons.
 	//
@@ -1146,6 +1150,10 @@ type WebAppData struct {
 	// ButtonText is the text of the web_app keyboard button, from which the Web App
 	// was opened. Be aware that a bad client can send arbitrary data in this field.
 	ButtonText string `json:"button_text"`
+}
+
+type WriteAccessAllowed struct {
+	WebAppName string `json:"web_app_name,omitempty"`
 }
 
 // ProximityAlertTriggered represents a service message sent when a user in the
