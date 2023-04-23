@@ -1222,7 +1222,7 @@ type InlineConfig struct {
 	NextOffset    string        `json:"next_offset"`
 	//SwitchPMText      string                   `json:"switch_pm_text"`
 	//SwitchPMParameter string                   `json:"switch_pm_parameter"`
-	Button InlineQueryResultsButton `json:"button"`
+	Button InlineQueryResultsButton `json:"button,omitempty"`
 }
 
 type InlineQueryResultsButton struct {
